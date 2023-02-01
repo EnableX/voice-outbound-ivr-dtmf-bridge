@@ -210,7 +210,7 @@ function voiceEventHandler(voiceEvent) {
   if (voiceEvent.playstate !== undefined) {
     if (voiceEvent.playstate === 'playfinished' && voiceEvent.prompt_ref === 'welcome_prompt') {
        console.log ("["+callVoiceId+"] Playing voice menu");
-       ivrVoiceCall(voiceEvent.voice_id, ttsPlayVoice,'en-US', "Please press 1 to talk to sales team  .........  2 to talk to service team ....... 3 to disconnect the call .........................................", 'dtfm_digit',true, () => {});
+       ivrVoiceCall(voiceEvent.voice_id, ttsPlayVoice,'en-US', "Please press 1 to talk to sales team ... 2 to talk to service team ... 3 to disconnect the call", 'voice_menu',true, () => {});
     } else if (voiceEvent.playstate === 'menutimeout'){
        console.log ("["+callVoiceId+"]  menutimeout received");
     } else if(voiceEvent.playstate === 'digitcollected') {
@@ -223,13 +223,13 @@ function voiceEventHandler(voiceEvent) {
         logger.info(`[${callVoiceId}] ${eventMsg}`);
         sseMsg.push(eventMsg);
         ivrVoiceCall(callVoiceId, 'en-US', ttsPlayVoice, "Your call will be forwarded to Sales Team", 'voice_menu', false, () => {});
-        setTimeout(()=>{bridgeCall(callVoiceId, '12028528186' , numberArray[voiceEvent.digit], () => {})},3000);
+        setTimeout(()=>{bridgeCall(callVoiceId, process.env.FROM , numberArray[voiceEvent.digit], () => {})},3000);
       } else if(voiceEvent.digit === '2') {
         const eventMsg = 'Received Digits : ' + voiceEvent.digit + ' Your call will be forwarded to Service Team';
         logger.info(`[${callVoiceId}] ${eventMsg}`);
         sseMsg.push(eventMsg);
         ivrVoiceCall(callVoiceId, ttsPlayVoice, 'en-US', "Your call will be forwarded to Service Team", 'voice_menu',false, () => {});
-        setTimeout(()=>{bridgeCall(callVoiceId, '12028528186' , numberArray[voiceEvent.digit], () => {})},3000);
+        setTimeout(()=>{bridgeCall(callVoiceId, process.env.FROM , numberArray[voiceEvent.digit], () => {})},3000);
       } else if(voiceEvent.digit === '3') {
         const eventMsg = 'Received Digits : ' + voiceEvent.digit + ' Your call will be disconnected';
         logger.info(`[${callVoiceId}] ${eventMsg}`);
