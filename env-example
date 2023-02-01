@@ -1,0 +1,46 @@
+# Access Credentials for API
+
+  # Your APP ID after creation of application on https://portal.enablex.io/
+  # Example - 5f1e99bf90ce3c3ccsc52e6462
+ENABLEX_APP_ID=
+# Your APP KEY after creation of application on https://portal.enablex.io/
+  # Example - Ry3uEurydeSyTuReXaDuMe9u7ysasadd2d2d2by
+ENABLEX_APP_KEY=
+# Set port on which this service will run
+SERVICE_PORT=
+# Webhook - EnableX will send HTTP requests to your application after certain events occur.
+  # If you have deployed this service on a web server which is publicly accessible,
+    # set the public URL. Example - `https://{PUBLIC_URL}`
+  # If you want to test this service on a web server running locally on your own computer at a given port, with ngrok, you can generate URL that tunnels requests to your web server running locally.
+  # Once ngrok installed, run `./ngrok http {SERVICE_PORT}`. It should provide you a ngrok URL something similar to `https://fc6c892d6cd7.ngrok.io`
+    # Set the ngrok URL. Example - `https://fc6c892d6cd7.ngrok.io`
+PUBLIC_WEBHOOK_URL=
+# SSL Certificate (Self Signed or Registered)
+# Make a directory called certs on the root of the project - `mkdir certs`
+# Change to certs directory - `cd certs`
+# Create and Install certificates - `openssl req -nodes -new -x509   -keyout example.key -out example.crt   -days 365   -subj '/CN=example.com/O=My Company Name LTD./C=US'; cat example.crt > example.ca-bundle`
+
+  # run the server on http or https
+LISTEN_SSL=
+#Set the preferred voice for playing the text to speech prompt , Female or Male. 
+VOICE=
+#Set the text to ge played as prompt
+TEXT=
+#Set the preferred language for playing the text to speech prompt. 
+LANGUAGE=
+#Set the prompt reference that will be returned to identify the prompt that has been played in the response .
+PROMPT_REF=
+#Set the Called Id - the virtual number that has been bought and attached to the project.
+FROM=
+#Set the destination number to be called.
+TO=
+#Set the Number for the call to be bridged based on the digits pressed.
+#This is for example purpose only , the logic to pick the free agent to bridge the call based on the digits depends on the use case.
+BRIDGETO='+1XXXXXXXXX1,+1XXXXXXXXX2'
+
+# use the certificate .key [self signed or registered]
+  CERTIFICATE_SSL_KEY=./certs/example.key
+# use the certificate .crt [self signed or registered]
+  CERTIFICATE_SSL_CERT=./certs/example.crt
+# use the certificate CA[chain] [self signed or registered]
+  CERTIFICATE_SSL_CACERTS=./certs/example.ca-bundle
