@@ -8,8 +8,8 @@ This example contains instructions how users can initiate Outbound Calls.
 
 
 ## Installation
-- `git clone https://github.com/EnableX/voice-api-outbound-ivr.git`
-- `cd voice-api-outbound-ivr`
+- `git clone https://github.com/EnableX/voice-outbound-ivr-dtmf-bridge.git`
+- `cd voice-outbound-ivr-dtmf-bridge`
 - `npm install`
 
 
@@ -89,6 +89,6 @@ Windows (Using Git Bash):
 - For Outbound Calls,
 ```
   - npm install
-  - node client-outbound-ivr.js
+  - node client.js
   
 ```
