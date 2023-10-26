@@ -1,4 +1,4 @@
-# **Basic Client Examples to demonstrate Outbound Calls with IVR to collect DTMF and bridging the call using Enablex Voice APIs. **
+# Outbound Calls with IVR DTMF Collection and Bridging: Using EnableX Programmable Voice APIs
 This example contains instructions how users can initiate Outbound Calls play IVR to collect the DTMF and bridge the call to number based on user selection.
 
 
